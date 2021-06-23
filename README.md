@@ -50,13 +50,13 @@ We could keep the header and detail on one page but adhering to separation of co
 ### The services folder contains the following
 1. api: contains the api calls to Poke Api plus a resolver service that caches the pokemon types from the api call
 2. behaviour-services: used to keep track of the Pokemon filters, and to sync this data between the pokemon-header and pokemon-detail components
-3. guards: currently only used for changing the page title but this would be mostly used for security
+3. guards: currently only used for changing the page title but these are more commonly used for security
 
 ### The pipes folder contains the filters for 
 1. search text 
 2. types
 
-Pipes allow our code to be reused
+Pipes allow code to be reused
 
 ### The data-models contains 
 1. the models to match the api requests
