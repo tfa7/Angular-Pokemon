@@ -20,6 +20,7 @@ Available in the screenshots folder for both desktop and mobile
 3. has a large community for support 
 4. comes with a good testing framework - jasmine and karma
 5. great ui tools for mobile - Angular Material and Angular Flex Layout (see below)
+6. developers have only to update one application going forward
 
 ## Run Locally
 
