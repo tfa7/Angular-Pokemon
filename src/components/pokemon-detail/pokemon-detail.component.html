@@ -1,7 +1,12 @@
 <div *ngIf="dataLoaded" [@scaleIn]>
+  <div *ngIf="!((pokemons.results | search: searchFilterValue | typeFilter: typeFilterValue)?.length)" fxLayout="row"
+    fxLayoutAlign="center center" class="well">
+    <mat-icon fxFlexAlign="center" fxShow fxHide.xs fxHide.sm>info</mat-icon>&nbsp;&nbsp;
+    <span class="no-filter-label">No records found - remove filter</span>
+  </div>
   <div class="grid-layout">
     <div class="center-padding-card"
-      *ngFor="let pokemon of pokemons.results | search: searchFilterValue | typeFilter: typeFilterValue | slice: lowValue : highValue">
+      *ngFor="let pokemon of pokemons.results | search: searchFilterValue | typeFilter: typeFilterValue">
       <mat-card (click)="viewPokemonItem(pokemon)" class="pokemon-card" *ngIf="pokemon.details">
         <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
 

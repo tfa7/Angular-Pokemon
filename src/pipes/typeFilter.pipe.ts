@@ -11,7 +11,6 @@ export class TypeFilterPipe implements PipeTransform {
     if (!filters) {
       return value;
     }
-    filters = filters.toLowerCase();
 
     return value.filter(item => {
       let matchFound = false;
