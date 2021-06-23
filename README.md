@@ -1,6 +1,6 @@
-# Angular Pokémon
+# Angular Pokémon Demo
 
-This is a very basic demonstration project, displaying a few of the many powerful features Angular has to offer. 
+This is a very basic frontend project, displaying a few of the many powerful features Angular has to offer. 
 
 ## Requirments
 Get an application connecting to <a href="https://pokeapi.co/" target="_blank">Poke Api</a>, and make the application desktop and mobile friendly.
@@ -69,4 +69,5 @@ Several scss pages that are imported in to the main "styles.scss" file
 3. material-custom.scss: changes to angular materialbase styling. This is usefuly if one decides to upgrade the project.
 4. var.scss: colour variables for the global core theme styling
 
+## Testing
 No tests were created for this project but usually, jasmine and karma are used when testing Angular applications.
