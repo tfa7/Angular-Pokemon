@@ -1,0 +1,46 @@
+<div class="dialog-header" fxLayout="row" fxLayoutAlign="start center">
+  {{data.pokemon.name | titlecase }}
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <div fxLayoutAlign="center center">
+    <img class="pokemon-image-xs" src="{{ data.pokemon.details.sprites.front_default }}"
+      alt="photo of {{ data.pokemon.name }}" />
+  </div>
+  <div fxLayout="row">
+    <div >
+      <mat-form-field>
+        <input disabled  matInput placeholder="Id" [(ngModel)]="data.pokemon.details.id">
+      </mat-form-field>
+      <mat-form-field>
+        <input disabled matInput placeholder="Height" [(ngModel)]="data.pokemon.details.height">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input disabled matInput placeholder="Weight" [(ngModel)]="data.pokemon.details.weight">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Type" disabled [(ngModel)]="data.pokemon.details.types[0].type.name">
+          <mat-option *ngFor="let type of data.types" [value]="type.name">
+            {{ type.name | titlecase }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div>
+    <mat-checkbox color="accent" [(ngModel)]="data.pokemon.favourite" (change)="isDirty=true">Favourite
+    </mat-checkbox>
+  </div>
+</mat-dialog-content>
+<hr>
+<mat-dialog-actions fxLayoutAlign.xs="center center">
+  <button fxFlex="105px" class="mat-raised-button" (click)="close()">
+    <mat-icon>close</mat-icon>&nbsp;<span>Close</span>
+  </button>&nbsp;&nbsp;
+  <button fxFlex="105px" [disabled]="!isDirty && !data.pokemon.favourite" class="mat-raised-button mat-primary btn-save"
+    (click)="save()">
+    <mat-icon>save</mat-icon>&nbsp;<span>Save</span>
+  </button>
+</mat-dialog-actions>

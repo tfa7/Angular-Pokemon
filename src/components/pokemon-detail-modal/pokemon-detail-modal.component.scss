@@ -1,0 +1,54 @@
+@import "../../styles/var";
+
+.mat-form-field {
+  font-size: larger;
+}
+
+.dialog-header {
+  height: 60px;
+  padding: 10px 15px;
+  color: $color__secondary;
+  font-size: 1.8em;
+  background-color: $color__main;
+}
+
+.pokemon-image {
+  height: 240px;
+  position: absolute;
+}
+
+.pokemon-image-xs {
+  height: 160px;
+}
+
+::ng-deep .mat-dialog-container {
+  width: 450px;
+  height: 450px;
+  padding: 0px;
+}
+
+::ng-deep .mat-dialog-content {
+  margin: 0px;
+  padding: 15px;
+}
+
+::ng-deep mat-dialog-actions {
+  padding: 15px !important;
+}
+
+::ng-deep .mat-select-value {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+::ng-deep .mat-checkbox {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.1em;
+}
+
+::ng-deep .mat-form-field-infix {
+  width: 130px;
+}
+
+.btn-save {
+  background-color: green;
+}

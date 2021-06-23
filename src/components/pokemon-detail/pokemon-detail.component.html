@@ -1,0 +1,42 @@
+<div *ngIf="dataLoaded" [@scaleIn]>
+  <div class="grid-layout">
+    <div class="center-padding-card"
+      *ngFor="let pokemon of pokemons.results | search: searchFilterValue | typeFilter: typeFilterValue | slice: lowValue : highValue">
+      <mat-card (click)="viewPokemonItem(pokemon)" class="pokemon-card" *ngIf="pokemon.details">
+        <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
+
+        <div class="pokemon-card-image">
+          <img mat-card-image src="{{ pokemon.details.sprites.front_default }}" alt="photo of {{ pokemon.name }}" />
+        </div>
+        <mat-card-content>
+          <div>
+            <div *ngFor="let type of pokemon.details.types" class="types"
+              [style.background]="_getTypeColour(type.type.name)">
+              {{ type.type.name | titlecase }}
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button [disabled]="!offset" class="mat-raised-button mat-primary" (click)="back()">
+      <mat-icon>arrow_back</mat-icon>&nbsp;<span>Back</span>
+    </button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="mat-raised-button mat-primary" (click)="next()">
+      <span>Next</span>&nbsp;<mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+  <br>
+  <br>
+</div>
+
+<div *ngIf="!dataLoaded" id="splash-screen">
+  <div class="wrapper">
+    <div class="ball-scale-multiple">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>

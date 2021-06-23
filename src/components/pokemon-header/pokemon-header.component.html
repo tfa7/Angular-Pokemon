@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <img fxHide.xs fxHide.sm class="pokemon-logo"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" />
+
+  <div class="search-box">
+    <input matInput class="search-input" type="text" [(ngModel)]="searchFilterValue"
+      placeholder="Filter by name or id..." />
+  </div>
+
+  <div class="filter-component">
+    <mat-label class="filter"><span fxHide.xs>Filter by </span>Type</mat-label>
+    <mat-form-field class="form-field">
+      <mat-select [(ngModel)]="typeFilterValue">
+        <mat-option [value]="null">None</mat-option>
+        <mat-option *ngFor="let type of typeList" [value]="type.name">
+          {{ type.name | titlecase }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</mat-toolbar>
+
+<app-pokemon-homepage [searchFilterValue]="searchFilterValue" [typeFilterValue]="typeFilterValue" [typeList]="typeList">
+</app-pokemon-homepage>

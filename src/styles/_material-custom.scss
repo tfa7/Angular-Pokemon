@@ -1,0 +1,60 @@
+// This is where Angular material core css is modified
+
+@import "var";
+
+.mat-paginator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.mat-paginator-container {
+  color: $color__secondary;
+  background-color: $color__main;
+  font-size: 1.2em;
+}
+
+.mat-select-value {
+  color: $color__secondary;
+}
+
+.mat-select-arrow {
+  color: $color__secondary;
+}
+
+.paginator {
+  color: $color__secondary;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $color__secondary;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: $color__secondary;
+}
+
+button > span, button > .mat-icon {
+  vertical-align: middle !important;
+}
+
+.mat-button,
+.mat-fab,
+.mat-flat-button,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-raised-button,
+.mat-stroked-button {
+  font-size: 20px !important;
+  height: 45px !important;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #efefef;
+  box-shadow: none !important;
+}
+
+.mat-paginator-navigation-next,
+.mat-paginator-navigation-previous {
+  background-color: $color__secondary;
+  color: $color__main;
+}
