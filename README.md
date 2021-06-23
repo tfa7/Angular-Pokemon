@@ -1,9 +1,9 @@
 # Angular Pokémon
 
-This is a demonstration project using Angular and <a href="https://pokeapi.co/" target="_blank">Poke Api</a>
+This is a very basic demonstration project, displaying a few of the many powerful features Angular has to offer. 
 
 ## Requirments
-Get an application connecting to Poke Api, and make the application desktop and mobile friendly.
+Get an application connecting to <a href="https://pokeapi.co/" target="_blank">Poke Api</a>, and make the application desktop and mobile friendly.
 
 ## Live Demo
 
