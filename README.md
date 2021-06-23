@@ -9,11 +9,15 @@ Get an Angular application  connecting to Poke Api, and make the application des
 
 The live demo is available <a href="https://appdemo1.com" target="_blank">here</a>
 
+## Screenshots
+
+Are available in the screenshots folder for both desktop and mobile
+
 ## Run Locally
 
 To run this project locally:
 1. download the entire repo
-2. open command prompt and change to the downloaded directory 
+2. open command prompt (or any terminal) and change to the downloaded directory 
 3. in command prompt run "npm i" to install required packages 
 4. after npm finishes run "ng serve"
 
