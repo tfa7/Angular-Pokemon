@@ -15,12 +15,11 @@ Available in the screenshots folder for both desktop and mobile
 
 ## Why Angular
 
-I choose Angular because 
-1. it is easy to work 
+1. it is easy to work with
 2. very little code needed to get your result
-3. has a large community for supporting 
-4. comes with a good testing framework -jasmine and karma
-5. great ui tools for mobile - material and flex layout
+3. has a large community for support 
+4. comes with a good testing framework - jasmine and karma
+5. great ui tools for mobile - Angular Material and Angular Flex Layout (see below)
 
 ## Run Locally
 
@@ -45,10 +44,10 @@ This project uses <a href="https://material.angular.io/" target="_blank">Angular
 2. pokemon-detail: displays the Pokemon cards
 3. pokemon-detail-modal: displays the selected Pokemon
 
-We could have keeping the header and detail on one page but for seperation of concerns and single responsible principle, both of these were seperated. The observer behavioural design pattern ensures the respective conponents are in sync by allowing components to subscribe to the 'PokemonFilterService'.
+We could keep the header and detail on one page but adhering to separation of concerns and single responsibility principle, both were placed in separate components. The observer behavioral design pattern ensures the respective components are in sync by allowing components to subscribe to the 'PokemonFilterService'.
 
 ### The services folder contains the following
-1. api: contains the api calls to Poke Api and a resolver service that caches the pokemon types
+1. api: contains the api calls to Poke Api plus a resolver service that caches the pokemon types from the api call
 2. behaviour-services: used to keep track of the Pokemon filters, and to sync this data between the pokemon-header and pokemon-detail components
 3. guards: currently only used for changing the page title but this would be mostly used for security
 
