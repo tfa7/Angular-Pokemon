@@ -64,10 +64,6 @@
     }
   }
 
-  .no-filter-label {
-    font-size: 1.3em;
-  }
-
   // animation card hover
   @-webkit-keyframes pulse {
     0% {
@@ -97,4 +93,8 @@
       transform: scale3d(1.05, 1.05, 1.05);
     }
   }
+}
+
+.no-records-filter-label {
+  font-size: 1.3em;
 }

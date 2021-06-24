@@ -2,7 +2,7 @@
   <div *ngIf="!((pokemons.results | search: searchFilterValue | typeFilter: typeFilterValue)?.length)" fxLayout="row"
     fxLayoutAlign="center center" class="well">
     <mat-icon fxFlexAlign="center">info</mat-icon>&nbsp;&nbsp;
-    <span class="no-filter-label">No records found - remove the filters</span>
+    <span class="no-records-filter-label">No records found - remove the filter</span>
   </div>
   <div class="grid-layout">
     <div class="center-padding-card"

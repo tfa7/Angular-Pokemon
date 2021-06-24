@@ -1,6 +1,6 @@
 # Angular Pokémon Demo
 
-This is a very basic frontend project, displaying a few of the many powerful features Angular has to offer. 
+This is a very basic frontend project, displaying a few of the many powerful features AngularV9 has to offer. 
 
 ## Requirments
 Get an application connecting to <a href="https://pokeapi.co/" target="_blank">Poke Api</a>, and make the application desktop and mobile friendly.
@@ -34,7 +34,7 @@ The web application should then be available locally on http://localhost:4200/
 
 ## Project Details
 
-This project was generated with <a href="https://github.com/angular/angular-cli" target="_blank">Angular CLI</a> version 8.0.0.
+This project was generated with <a href="https://github.com/angular/angular-cli" target="_blank">Angular CLI</a> version 9.
 
 This project uses <a href="https://material.angular.io/" target="_blank">Angular-Material</a> and <a href="https://github.com/angular/flex-layout#readme" target="_blank">Angular Flex Layout</a>
 
