@@ -7,7 +7,7 @@ Connect an app to <a href="https://pokeapi.co/" target="_blank">Poke Api</a>, an
 
 ## Live Demo
 
-A live demo is available <a href="https://appdemo1.com" target="_blank">here</a>
+A live demo is available <a href="https://appdemo1.com" target="_blank">https://appdemo1.com</a>
 
 ## Screenshots
 
