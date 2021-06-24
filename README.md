@@ -1,8 +1,8 @@
 # Angular Pokémon Demo
 
-A basic frontend project, displaying a few of the many powerful features Angular V9 has to offer. 
+This is a basic Angular v9 project, demonstrating a few of the many powerful features Angular has to offer. 
 
-## Requirments
+## Project Requirments
 Connect an app to <a href="https://pokeapi.co/" target="_blank">Poke Api</a>, and make the app desktop and mobile friendly.
 
 ## Live Demo
