@@ -26,7 +26,7 @@ Available in the screenshots folder for both desktop and mobile.
 
 To run this project locally:
 1. download the repo
-2. open command prompt (or any terminal) and change to the downloaded directory 
+2. open command prompt (or any terminal) and change to the src directory 
 3. in command prompt run "npm i" to install required packages 
 4. after npm finishes run "ng serve"
 
