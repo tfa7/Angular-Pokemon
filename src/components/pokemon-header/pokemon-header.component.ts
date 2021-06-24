@@ -21,8 +21,8 @@ export class PokemonHeaderComponent implements OnInit, AfterContentChecked {
   }
 
   ngOnInit(): void {
-    // one api call - get the list once and pass it down.
-    // fyi the api call wac cached by the resolver if one moved pages it would not execute api get again
+    // one api call - get the list once and pass it down
+    // fyi the api call was cached by the resolver
     this.typeList = this.route.snapshot.data['typeList'].results as Array<PokeTypes>;
     this.typeList = this.typeList.sort((a, b) => (a.name > b.name) ? 1 : -1);
 
