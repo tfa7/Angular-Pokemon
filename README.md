@@ -1,13 +1,13 @@
 # Angular Pokémon Demo
 
-This is a very basic frontend project, displaying a few of the many powerful features AngularV9 has to offer. 
+This is a basic Angular v9 project, demonstrating a few of the many powerful features Angular has to offer. 
 
-## Requirments
-Get an application connecting to <a href="https://pokeapi.co/" target="_blank">Poke Api</a>, and make the application desktop and mobile friendly.
+## Project Requirments
+Connect an app to <a href="https://pokeapi.co/" target="_blank">Poke Api</a>, and make the app desktop and mobile friendly.
 
 ## Live Demo
 
-The live demo is available <a href="https://appdemo1.com" target="_blank">here</a>
+A live demo is available <a href="https://appdemo1.com" target="_blank">https://appdemo1.com</a>
 
 ## Screenshots
 
@@ -16,17 +16,17 @@ Available in the screenshots folder for both desktop and mobile.
 ## Why Angular
 
 1. it is easy to work with
-2. very little code needed to get your result
+2. very little code needed to get the end result
 3. has a large community for support 
 4. comes with a good testing framework - jasmine and karma
-5. great ui tools for mobile - Angular Material and Angular Flex Layout (see below)
+5. good mobile ui/ux tools - Angular Material and Angular Flex Layout (see below)
 6. developers have only to manage one application going forward
 
 ## Run Locally
 
 To run this project locally:
-1. download the entire repo
-2. open command prompt (or any terminal) and change to the downloaded directory 
+1. download the repo
+2. open command prompt (or any terminal) and change to the src directory 
 3. in command prompt run "npm i" to install required packages 
 4. after npm finishes run "ng serve"
 
@@ -45,7 +45,7 @@ This project uses <a href="https://material.angular.io/" target="_blank">Angular
 2. pokemon-detail: displays the Pokemon cards
 3. pokemon-detail-modal: displays the selected Pokemon
 
-We could keep the header and detail on one page but adhering to separation of concerns and single responsibility principle, both were placed in separate components. This makes it easier to manage and test these components. The observer behavioral design pattern ensures the respective components are in sync by allowing components to subscribe to the 'PokemonFilterService'.
+One could keep the header and detail on one page but adhering to separation of concerns and single responsibility principle, both were placed in separate components. This makes it easier to manage and test these components. The observer behavioral design pattern was implemented for sharing the filtering service, this ensures the respective components are in sync by allowing components to subscribe to the 'PokemonFilterService'.
 
 ### The services folder contains the following
 1. api: contains the api calls to Poke Api plus, a resolver service that caches the pokemon types from the api call
