@@ -9,7 +9,10 @@ import { TypeApiService } from "./type-api.service";
 @Injectable()
 export class TypeResolverService implements Resolve<any> {
   constructor(private typeApiService: TypeApiService, private transferState: TransferState, @Inject(PLATFORM_ID) private platformId) { }
-
+  
+  // this is just an example of how transfer state can work
+  // below stops a double request for the data when using Angular Universal
+  
   resolve(): Observable<any> {
 
     const Key = makeStateKey<any>('typeList');
