@@ -16,7 +16,9 @@ export class PokemonService {
   constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerService) {
     this.pokemonApiUrl = environment.pokemonApiUrl;
   }
-
+  
+  //We could make a generic type <T> GET method that passes the url in full
+  
   //Returns list of pokemons
   getPokemonApi(offset: number = 0): Observable<PokeAPI> {
     let pageSize = environment.pageSize;
