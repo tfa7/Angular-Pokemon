@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { TYPE_COLOURS } from 'src/data-models/enums';
 import { PokemonDetails, Pokemon } from 'src/data-models/pokemon';
 import { PokemonDetailModal, PokeTypes } from 'src/data-models/poke-types';
@@ -20,8 +20,6 @@ export class PokemonDetailComponent implements OnInit {
   @Input() typeList: Array<PokeTypes>;
   @Input() searchFilterValue: string;
   @Input() typeFilterValue: string;
-  gridlayoutxs: string = "grid-layout-xs";
-  gridlayout: string = "grid-layout";
 
   dataLoaded: boolean;
   pokemons: PokeAPI;
