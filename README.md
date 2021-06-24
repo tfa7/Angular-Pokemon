@@ -45,10 +45,10 @@ This project uses <a href="https://material.angular.io/" target="_blank">Angular
 2. pokemon-detail: displays the Pokemon cards
 3. pokemon-detail-modal: displays the selected Pokemon
 
-One could keep the header and detail on one page but adhering to separation of concerns and single responsibility principle, both were placed in separate components. This makes it easier to manage and test these components. The observer behavioral design pattern was implemented for sharing the filtering service, this ensures the respective components are in sync by allowing components to subscribe to the 'PokemonFilterService'.
+One could keep the header and detail on one page but adhering to separation of concerns and single responsibility principle, both were placed in separate components. This makes it easier to manage and test. The observer behavioral design pattern was implemented for sharing the filtering service, this ensures the respective components are in sync by allowing components to subscribe to the 'PokemonFilterService'.
 
 ### The services folder contains the following
-1. api: contains the api calls to Poke Api plus, a resolver service that caches the pokemon types from the api call
+1. api: contains the api calls to Poke Api plus, using Facade design pattern a resolver service caches the pokemon types from the api call
 2. behaviour-services: used to keep track of the Pokemon filters, and to sync this data between the pokemon-header and pokemon-detail components
 3. guards: currently only used for changing the page title but these are more commonly used for security
 
@@ -65,9 +65,9 @@ Pipes allow code to be reused
 ### The styles folders contains 
 Several scss pages that are imported in to the main "styles.scss" file
 1. custom.scss: global css styling
-2. loading-ball.scss: a nice UI/UX component, displaed when waiting for an api response
-3. material-custom.scss: changes to angular materialbase styling. This is usefuly if one decides to upgrade the project.
+2. loading-ball.scss: a nice UI/UX component, displayed while waiting for an api response
+3. material-custom.scss: changes to angular material base styling. This is usefuly if one decides to upgrade the project.
 4. var.scss: colour variables for the global core theme styling
 
 ## Testing
-No tests were created for this project but usually, jasmine and karma are used when testing Angular applications.
+No tests were created for this project.
