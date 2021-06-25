@@ -8,7 +8,7 @@ export class PokemonFilterService {
   private pokemonfilterStatus = new PokemonFilter();
   private pokemonFilterSource = new BehaviorSubject<PokemonFilter>(this.pokemonfilterStatus);
 
-  change(data: PokemonFilter) {
+  public change(data: PokemonFilter) : void {
     this.pokemonFilterSource.next(data);
   }
 

@@ -23,20 +23,20 @@ export class PokemonDetailComponent implements OnInit {
 
   dataLoaded: boolean;
   pokemons: PokeAPI;
-  offset: number
+  pagingOffset: number
 
   constructor(public pokemonFilterService: PokemonFilterService, public dialog: MatDialog, private pokemonService: PokemonService, private helper: HelperService) { }
 
   ngOnInit(): void {
-    this.offset = 0;
-    this.getPokemons(this.offset);
+    this.pagingOffset = 0;
+    this.getPokemons(this.pagingOffset);
   }
 
-  getPokemons(offset: number): void {
+  getPokemons(pagingOffset: number): void {
     // reset the filters on change page
     this.pokemonFilterService.change(null);
     this.dataLoaded = false;
-    this.pokemonService.getPokemonApi(offset).subscribe((data: PokeAPI) => {
+    this.pokemonService.getPokemonApi(pagingOffset).subscribe((data: PokeAPI) => {
       this.pokemons = data;
       this.pokemons.results = this.pokemons.results.sort((a, b) => (a.name > b.name) ? 1 : -1);
       if (this.pokemons.results && this.pokemons.results.length) {
@@ -75,17 +75,17 @@ export class PokemonDetailComponent implements OnInit {
 
   back(): void {
     //should be no need to check this offset value if button is disabled
-    if (this.offset <= 0) {
+    if (this.pagingOffset <= 0) {
       return;
     }
 
-    this.offset -= 20;
-    this.getPokemons(this.offset);
+    this.pagingOffset -= 20;
+    this.getPokemons(this.pagingOffset);
   }
 
   next(): void {
-    this.offset += 20;
-    this.getPokemons(this.offset);
+    this.pagingOffset += 20;
+    this.getPokemons(this.pagingOffset);
   }
 
   // returns colour based on type mapped in TYPE_COLOURS interface

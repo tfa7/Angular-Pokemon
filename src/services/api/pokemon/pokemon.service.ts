@@ -20,10 +20,10 @@ export class PokemonService {
   //We could make a generic type <T> GET method that passes the url in full
   
   //Returns list of pokemons
-  getPokemonApi(offset: number = 0): Observable<PokeAPI> {
+  getPokemonApi(pagingOffset: number = 0): Observable<PokeAPI> {
     let pageSize = environment.pageSize;
     return this.http
-      .get<PokeAPI>(`${this.pokemonApiUrl}pokemon?limit=` + pageSize + '&offset=' + offset)
+      .get<PokeAPI>(`${this.pokemonApiUrl}pokemon?limit=` + pageSize + '&offset=' + pagingOffset)
       .pipe(catchError(this.errorHandlerService.handleError));
   }
 
