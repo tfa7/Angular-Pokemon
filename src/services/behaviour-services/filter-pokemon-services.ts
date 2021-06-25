@@ -8,10 +8,12 @@ export class PokemonFilterService {
   private pokemonfilterStatus = new PokemonFilter();
   private pokemonFilterSource = new BehaviorSubject<PokemonFilter>(this.pokemonfilterStatus);
 
-  public change(data: PokemonFilter) : void {
+  // this updates the data from the component
+  change(data: PokemonFilter) : void {
     this.pokemonFilterSource.next(data);
   }
 
+  // this lets the subscribing component know the data has changed
   public filterDataHasChanged(): Observable<PokemonFilter> {
     return this.pokemonFilterSource.asObservable();
   }
