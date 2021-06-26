@@ -5,7 +5,7 @@ import { PokemonFilter } from 'src/data-models/pokemon';
 
 @Injectable()
 export class PokemonFilterService {
-  private pokemonfilterStatus = new PokemonFilter();
+  private pokemonfilterStatus = new PokemonFilter('','');
   private pokemonFilterSource = new BehaviorSubject<PokemonFilter>(this.pokemonfilterStatus);
 
   // this updates the data from the component

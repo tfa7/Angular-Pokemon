@@ -3,14 +3,14 @@
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" />
 
   <div class="search-box">
-    <input matInput class="search-input" type="text" [(ngModel)]="searchFilterValue"
-      placeholder="Filter by name or id..." />
+    <input matInput class="search-input" type="text" [(ngModel)]="pokemonFilter.inputFilter"
+      placeholder="Filter by name or id..." (input)="inputFilterChanged()" />
   </div>
 
   <div class="filter-component">
     <mat-label class="filter"><span fxHide.xs>Filter by </span>Type</mat-label>
     <mat-form-field class="form-field">
-      <mat-select [(ngModel)]="typeFilterValue">
+      <mat-select [(ngModel)]="pokemonFilter.typeFilter" (selectionChange)="typeFilterChanged()">
         <mat-option [value]="null">None</mat-option>
         <mat-option *ngFor="let type of typeList" [value]="type.name">
           {{ type.name | titlecase }}
@@ -20,5 +20,4 @@
   </div>
 </mat-toolbar>
 
-<app-pokemon-homepage [searchFilterValue]="searchFilterValue" [typeFilterValue]="typeFilterValue" [typeList]="typeList">
-</app-pokemon-homepage>
+<app-pokemon-homepage [typeList]="typeList"></app-pokemon-homepage>

@@ -22,8 +22,13 @@ export class Sprites {
 }
 
 export class PokemonFilter {
-  searchFilterValue: string;
-  typeFilterValue: string;
+  inputFilter: string;
+  typeFilter: string;
+
+  constructor(inputFilter: string, typeFilter: string) {
+    this.inputFilter = inputFilter;
+    this.typeFilter = typeFilter;
+  }
 }
 
 

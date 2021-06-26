@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TYPE_COLOURS } from 'src/data-models/enums';
-import { PokemonDetails, Pokemon } from 'src/data-models/pokemon';
+import { PokemonDetails, Pokemon, PokemonFilter } from 'src/data-models/pokemon';
 import { PokemonDetailModal, PokeTypes } from 'src/data-models/poke-types';
 import { PokemonService } from 'src/services/api/pokemon/pokemon.service';
 import { PokemonFilterService } from 'src/services/behaviour-services/filter-pokemon-services';
@@ -18,8 +18,7 @@ import { PokeAPI } from 'src/data-models/base';
 })
 export class PokemonDetailComponent implements OnInit {
   @Input() typeList: Array<PokeTypes>;
-  @Input() searchFilterValue: string;
-  @Input() typeFilterValue: string;
+  pokemonFilter: PokemonFilter;
 
   dataLoaded: boolean;
   pokemons: PokeAPI;
@@ -30,6 +29,13 @@ export class PokemonDetailComponent implements OnInit {
   ngOnInit(): void {
     this.pagingOffset = 0;
     this.getPokemons(this.pagingOffset);
+
+    // use this service to check if the filter values change (reset)
+    this.pokemonFilterService.filterDataHasChanged().subscribe((pokemonFilter : PokemonFilter) => {
+      if (pokemonFilter) {
+        this.pokemonFilter = pokemonFilter;
+      }
+    });
   }
 
   getPokemons(pagingOffset: number): void {

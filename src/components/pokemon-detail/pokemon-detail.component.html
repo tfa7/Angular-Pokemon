@@ -1,12 +1,12 @@
 <div *ngIf="dataLoaded" [@scaleIn]>
-  <div *ngIf="!((pokemons.results | search: searchFilterValue | typeFilter: typeFilterValue)?.length)" fxLayout="row"
+  <div *ngIf="!((pokemons.results | search: pokemonFilter?.inputFilter | typeFilter: pokemonFilter?.typeFilter)?.length)" fxLayout="row"
     fxLayoutAlign="center center" class="well">
     <mat-icon fxFlexAlign="center">info</mat-icon>&nbsp;&nbsp;
     <span class="no-records-filter-label">No records found - remove the filter</span>
   </div>
   <div class="grid-layout">
     <div class="center-padding-card"
-      *ngFor="let pokemon of pokemons.results | search: searchFilterValue | typeFilter: typeFilterValue">
+      *ngFor="let pokemon of pokemons.results | search: pokemonFilter?.inputFilter | typeFilter: pokemonFilter?.typeFilter">
       <mat-card (click)="viewPokemonItem(pokemon)" class="pokemon-card" *ngIf="pokemon.details">
         <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
 
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div fxLayout="row" fxLayoutAlign="center center">
-    <button [disabled]="!offset" class="mat-raised-button mat-primary" (click)="back()">
+    <button [disabled]="!pagingOffset" class="mat-raised-button mat-primary" (click)="back()">
       <mat-icon>arrow_back</mat-icon>&nbsp;<span>Back</span>
     </button>&nbsp;&nbsp;&nbsp;&nbsp;
     <button class="mat-raised-button mat-primary" (click)="next()">
