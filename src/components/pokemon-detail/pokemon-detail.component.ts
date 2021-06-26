@@ -39,6 +39,10 @@ export class PokemonDetailComponent implements OnInit {
 
   getPokemons(pagingOffset: number): void {
     this.dataLoaded = false;
+
+    // reset filter on page change
+    this.pokemonFilterService.change(new PokemonFilter('', ''));
+
     this.pokemonService.getPokemonApi(pagingOffset).subscribe(async (data: PokeAPI) => {
       this.pokemons = data;
       this.pokemons.results = this.pokemons.results.sort((a, b) => (a.name > b.name) ? 1 : -1);
