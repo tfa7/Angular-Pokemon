@@ -30,7 +30,7 @@ export class PokemonDetailComponent implements OnInit {
     this.getPokemons(this.pagingOffset);
 
     // use this service to check if the filter values change (reset)
-    this.pokemonFilterService.filterDataHasChanged().subscribe((pokemonFilter : PokemonFilter) => {
+    this.pokemonFilterService.filterDataHasChanged().subscribe((pokemonFilter: PokemonFilter) => {
       if (pokemonFilter) {
         this.pokemonFilter = pokemonFilter;
       }
@@ -38,13 +38,14 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   getPokemons(pagingOffset: number): void {
-    // reset the filters on change page
-    this.pokemonFilterService.change(null);
     this.dataLoaded = false;
-    this.pokemonService.getPokemonApi(pagingOffset).subscribe((data: PokeAPI) => {
+    this.pokemonService.getPokemonApi(pagingOffset).subscribe(async (data: PokeAPI) => {
       this.pokemons = data;
       this.pokemons.results = this.pokemons.results.sort((a, b) => (a.name > b.name) ? 1 : -1);
       if (this.pokemons.results && this.pokemons.results.length) {
+        //small delay showing the loading ball simulating an external api call
+        await this.helper.delay(1500);
+        this.dataLoaded = true;
         // get pokemon details for every pokemon
         this.pokemons.results.forEach(pokemon => {
           this.getPokemonDetails(pokemon);
@@ -55,10 +56,7 @@ export class PokemonDetailComponent implements OnInit {
 
   getPokemonDetails(pokemon: Pokemon): void {
     this.pokemonService.getPokemonDetailsApi(pokemon.name).subscribe(async (details: PokemonDetails) => {
-      //small delay showing the loading ball simulating an external api call
-      await this.helper.delay(1500);
       pokemon.details = details;
-      this.dataLoaded = true;
     });
   }
 
