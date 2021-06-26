@@ -4,13 +4,13 @@
 
   <div class="search-box">
     <input matInput class="search-input" type="text" [(ngModel)]="pokemonFilter.inputFilter"
-      placeholder="Filter by name or id..." (input)="inputFilterChanged()" />
+      placeholder="Filter by name or id..." (input)="filterChanged()" />
   </div>
 
   <div class="filter-component">
     <mat-label class="filter"><span fxHide.xs>Filter by </span>Type</mat-label>
     <mat-form-field class="form-field">
-      <mat-select [(ngModel)]="pokemonFilter.typeFilter" (selectionChange)="typeFilterChanged()">
+      <mat-select [(ngModel)]="pokemonFilter.typeFilter" (selectionChange)="filterChanged()">
         <mat-option [value]="null">None</mat-option>
         <mat-option *ngFor="let type of typeList" [value]="type.name">
           {{ type.name | titlecase }}
