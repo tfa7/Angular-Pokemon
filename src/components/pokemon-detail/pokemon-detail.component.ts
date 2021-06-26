@@ -19,7 +19,6 @@ import { PokeAPI } from 'src/data-models/base';
 export class PokemonDetailComponent implements OnInit {
   @Input() typeList: Array<PokeTypes>;
   pokemonFilter: PokemonFilter;
-
   dataLoaded: boolean;
   pokemons: PokeAPI;
   pagingOffset: number

@@ -1,4 +1,4 @@
-import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokeTypes } from 'src/data-models/poke-types';
 import { PokemonFilter } from 'src/data-models/pokemon';
@@ -28,11 +28,7 @@ export class PokemonHeaderComponent implements OnInit {
     });
   }
 
-  typeFilterChanged(): void {
-    this.pokemonFilterService.change(this.pokemonFilter)
-  }
-
-  inputFilterChanged(): void {
+  filterChanged(): void {
     this.pokemonFilterService.change(this.pokemonFilter)
   }
 }
